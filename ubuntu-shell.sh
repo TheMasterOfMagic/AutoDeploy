@@ -33,15 +33,15 @@ else
     echo "oh-my-zsh installed"
 fi
 
-# make sure theme astro is installed
-if [[ -f "${HOME}"/.oh-my-zsh/custom/themes/astro.zsh-theme ]]
+# make sure theme markus is installed
+if [[ -f "${HOME}"/.oh-my-zsh/custom/themes/markus.zsh-theme ]]
 then
-    echo "astro.zsh-theme found, installation skipped"
+    echo "markus.zsh-theme found, installation skipped"
 else
-    echo "astro.zsh-theme not found, installing"
-    wget https://raw.githubusercontent.com/iplaces/astro-zsh-theme/master/astro.zsh-theme -O "${HOME}"/.oh-my-zsh/custom/themes/astro.zsh-theme &> /dev/null || (echo >& 2 "failed to download astro.zsh-theme" && exit 1)
-    sed -i "s/^ZSH_THEME=.*/ZSH_THEME=astro/" "${HOME}"/.zshrc
-    echo "astro.zsh-theme installed"
+    echo "markus.zsh-theme not found, installing"
+    wget https://raw.githubusercontent.com/TheMasterOfMagic/AutoDeploy/master/markus.zsh-theme -O "${HOME}"/.oh-my-zsh/custom/themes/markus.zsh-theme &> /dev/null || (echo >& 2 "failed to download markus.zsh-theme" && exit 1)
+    sed -i "s/^ZSH_THEME=.*/ZSH_THEME=markus/" "${HOME}"/.zshrc
+    echo "markus.zsh-theme installed"
 fi
 
 # make sure plugins are installed
