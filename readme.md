@@ -1,4 +1,6 @@
 # usage
 ```bash
-wget https://raw.githubusercontent.com/TheMasterOfMagic/AutoDeploy/master/ubuntu-shell.sh -O - | "$(command -v bash)"
+git clone https://github.com/TheMasterOfMagic/AutoDeploy.git
+cd AutoDeploy
+bash main.sh
 ```
