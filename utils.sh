@@ -21,7 +21,7 @@ update_apt_if_needed () {
 }
 
 install () {
-    start "installing $*"
+    start "apt installing $*"
     apt-get install -y -qq "$@" > /dev/null
     end $?
 }
