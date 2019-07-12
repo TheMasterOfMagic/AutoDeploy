@@ -1,12 +1,5 @@
 . ./logger.sh
 
-check_rc () {
-    rc=$?
-    if [[ "${rc}" != 0 ]]; then
-        end "${rc}" || exit "${rc}"
-    fi
-}
-
 update_apt_if_needed () {
     start "update apt if needed"
     last_update=$(stat -c %Y /var/cache/apt/pkgcache.bin 2> /dev/null || echo 0) 
@@ -21,12 +14,10 @@ update_apt_if_needed () {
 }
 
 install () {
-    start "apt installing $*"
-    apt-get install -y -qq "$@" > /dev/null
-    end $?
-}
-
-fuck () {
-    start "fucking"
-    end "$1"
+    update_apt_if_needed &&
+    (
+        start "apt installing $*"
+        apt-get install -y -qq "$@" > /dev/null
+        end $?
+    )
 }
