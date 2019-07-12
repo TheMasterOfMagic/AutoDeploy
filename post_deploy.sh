@@ -15,6 +15,12 @@ set_env_var () {
     end $?
 }
 
+initialize_anaconda_for_zsh () {
+    start "initializing anaconda for zsh"
+    "${HOME}"/anaconda3/bin/conda init zsh > /dev/null
+    end $?
+}
+
 post_deploy () {
     start "post deploying"
     set_env_var "LANG" "en_US.UTF-8" && \
